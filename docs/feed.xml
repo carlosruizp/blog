@@ -2,13 +2,13 @@
 <rss version="2.0">
   <channel>
     <title>Untitled Blog</title>
-    <link>https://YOUR-USERNAME.github.io/YOUR-REPO/</link>
+    <link>https://carlosruizp.github.io/blog/</link>
     <description>notes, mostly</description>
 
     <item>
       <title>Hello, world</title>
-      <link>https://YOUR-USERNAME.github.io/YOUR-REPO/posts/2026/09/hello-world.html</link>
-      <guid>https://YOUR-USERNAME.github.io/YOUR-REPO/posts/2026/09/hello-world.html</guid>
+      <link>https://carlosruizp.github.io/blog/posts/2026/09/hello-world.html</link>
+      <guid>https://carlosruizp.github.io/blog/posts/2026/09/hello-world.html</guid>
       <pubDate>Wed, 23 Sep 2026 00:00:00 -0000</pubDate>
       <description>&lt;p&gt;This is the first post. It exists to show what a post looks like once it's built: a title, a byline with the date, and a body written in a small subset of Markdown — paragraphs, &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italics&lt;/em&gt;, &lt;code&gt;inline code&lt;/code&gt;, &lt;a href="https://example.com"&gt;links&lt;/a&gt;, block quotes, and simple lists.&lt;/p&gt;
 &lt;blockquote&gt;&lt;p&gt;Style is not neutral; it is ideological, and the plainness of this page is a choice as much as any other.&lt;/p&gt;&lt;/blockquote&gt;
