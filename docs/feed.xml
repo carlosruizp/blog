@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Untitled Blog</title>
+    <link>https://YOUR-USERNAME.github.io/YOUR-REPO/</link>
+    <description>notes, mostly</description>
+
+    <item>
+      <title>Hello, world</title>
+      <link>https://YOUR-USERNAME.github.io/YOUR-REPO/posts/2026/09/hello-world.html</link>
+      <guid>https://YOUR-USERNAME.github.io/YOUR-REPO/posts/2026/09/hello-world.html</guid>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 -0000</pubDate>
+      <description>&lt;p&gt;This is the first post. It exists to show what a post looks like once it's built: a title, a byline with the date, and a body written in a small subset of Markdown — paragraphs, &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italics&lt;/em&gt;, &lt;code&gt;inline code&lt;/code&gt;, &lt;a href="https://example.com"&gt;links&lt;/a&gt;, block quotes, and simple lists.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;Style is not neutral; it is ideological, and the plainness of this page is a choice as much as any other.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Some things this template deliberately does &lt;em&gt;not&lt;/em&gt; have: hero images, card grids, animated transitions, a cookie banner, a newsletter popup, or a "reading time" estimate. Just a title, a date, and the text.&lt;/p&gt;
+&lt;p&gt;To add a new post, drop another &lt;code&gt;.md&lt;/code&gt; file into &lt;code&gt;content/posts/&lt;/code&gt; with the same front matter block, then run:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;python3 build.py&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;edit &lt;code&gt;content/config.json&lt;/code&gt; for the site title, tagline, and about blurb&lt;/li&gt;&lt;li&gt;edit &lt;code&gt;content/about.md&lt;/code&gt; for the about page&lt;/li&gt;&lt;li&gt;edit &lt;code&gt;templates/base.html&lt;/code&gt; for the blogroll links in the sidebar&lt;/li&gt;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>
