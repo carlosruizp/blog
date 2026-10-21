@@ -140,16 +140,14 @@ def slugify(title):
 
 # ---------- templating ----------
 
-def render_base(*, root, page_title, content_html, site, archive_list_html):
+def render_base(*, root, page_title, content_html, site):
     tpl = (TEMPLATES_DIR / "base.html").read_text(encoding="utf-8")
     return (tpl
             .replace("{{ROOT}}", root)
             .replace("{{PAGE_TITLE}}", page_title)
             .replace("{{SITE_TITLE}}", site["title"])
             .replace("{{SITE_TAGLINE}}", site["tagline"])
-            .replace("{{ABOUT_BLURB}}", site["about_blurb"])
             .replace("{{CONTENT}}", content_html)
-            .replace("{{ARCHIVE_LIST}}", archive_list_html)
             .replace("{{YEAR}}", str(datetime.now().year)))
 
 
@@ -226,34 +224,28 @@ def main():
 
     shutil.copytree(STATIC_DIR, OUT_DIR / "static")
 
-    archive_html_root = build_archive_list_html(posts, root="")
-    archive_html_deep = build_archive_list_html(posts, root="../../../")
-
     # index.html — full posts, newest first
     index_content = "".join(render_post_block(p, root="") for p in posts) or "<p>No posts yet.</p>"
     write(OUT_DIR / "index.html", render_base(
-        root="", page_title=site["title"], content_html=index_content,
-        site=site, archive_list_html=archive_html_root))
+        root="", page_title=site["title"], content_html=index_content, site=site))
 
     # individual post pages
     for p in posts:
         content = render_post_block(p, root="../../../", full=True)
         write(OUT_DIR / p["url"], render_base(
             root="../../../", page_title=f'{p["title"]} — {site["title"]}',
-            content_html=content, site=site, archive_list_html=archive_html_deep))
+            content_html=content, site=site))
 
     # archive.html — links only
-    archive_body = "<h2>Archive</h2><ul class=\"module\">" + build_archive_list_html(posts, root="") + "</ul>"
+    archive_body = "<h2>Archive</h2><ul class=\"archive-list\">" + build_archive_list_html(posts, root="") + "</ul>"
     write(OUT_DIR / "archive.html", render_base(
-        root="", page_title=f'Archive — {site["title"]}', content_html=archive_body,
-        site=site, archive_list_html=archive_html_root))
+        root="", page_title=f'Archive — {site["title"]}', content_html=archive_body, site=site))
 
     # about.html
     about_path = CONTENT_DIR / "about.md"
     about_html = markdown_to_html(about_path.read_text(encoding="utf-8")) if about_path.exists() else f"<p>{site['about_blurb']}</p>"
     write(OUT_DIR / "about.html", render_base(
-        root="", page_title=f'About — {site["title"]}', content_html=f"<h2>About</h2>{about_html}",
-        site=site, archive_list_html=archive_html_root))
+        root="", page_title=f'About — {site["title"]}', content_html=f"<h2>About</h2>{about_html}", site=site))
 
     # feed.xml
     write(OUT_DIR / "feed.xml", build_rss(posts, site))

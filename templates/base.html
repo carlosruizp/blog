@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{PAGE_TITLE}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="{{ROOT}}static/style.css">
 <link rel="alternate" type="application/rss+xml" title="{{SITE_TITLE}} RSS" href="{{ROOT}}feed.xml">
 </head>
@@ -16,37 +18,12 @@
     <div class="meta-links"><a href="{{ROOT}}feed.xml">rss</a> &middot; <a href="{{ROOT}}archive.html">archive</a> &middot; <a href="{{ROOT}}about.html">about</a></div>
   </div>
 
-  <div id="columns">
-    <div id="main">
+  <div id="main">
 {{CONTENT}}
-    </div>
-
-    <div id="sidebar">
-      <div class="module">
-        <h3>About</h3>
-        <p>{{ABOUT_BLURB}}</p>
-      </div>
-
-      <div class="module">
-        <h3>Blogroll</h3>
-        <ul>
-          <li><a href="https://example.com">some site</a></li>
-          <li><a href="https://example.com">another site</a></li>
-          <li><a href="https://example.com">yet another</a></li>
-        </ul>
-      </div>
-
-      <div class="module">
-        <h3>Archives</h3>
-        <ul>
-{{ARCHIVE_LIST}}
-        </ul>
-      </div>
-    </div>
   </div>
 
   <div id="footer">
-    &copy; {{YEAR}} {{SITE_TITLE}}. Built by hand, no frameworks were harmed.
+    &copy; {{YEAR}} {{SITE_TITLE}}.
   </div>
 
 </div>

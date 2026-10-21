@@ -1,8 +1,9 @@
 # blog
 
-A static blog with a deliberately 2000s look (small serif type, classic
-link colors, two-column layout with a blogroll sidebar, dashed rules
-between posts) — no JS framework, no build step beyond one Python script.
+A static blog styled after k-punk's actual theme (black ground, lime-green
+and orange-red accents, no sidebar, single column) crossed with thick
+borders and hard offset shadows — no JS framework, no build step beyond
+one Python script.
 
 ## Writing a post
 
@@ -31,7 +32,7 @@ This regenerates everything in `docs/`, which is what GitHub Pages serves.
 
 - `content/config.json` — site title, tagline, about blurb, base URL, optional custom domain (`cname`)
 - `content/about.md` — the About page body
-- `templates/base.html` — sidebar blogroll links, page chrome
+- `templates/base.html` — page chrome (header, nav links, footer)
 - `static/style.css` — the look
 
 ## Previewing locally
