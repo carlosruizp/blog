@@ -12,6 +12,6 @@ A pesar de este nombre pretencioso, mi objetivo es que este blog sea algo local.
 
 No sé sobre qué quiero escribir. A veces tengo ideas. Sobre temas que me interesan o me importan. Sobre conexiones entre estos temas. La mayoría me parece que son muy malas y las descarto. Las buenas las pienso durante suficiente tiempo para que me parezcan malas. Aun así, algunas sobreviven estos tamices mentales y quiero expresarlas. No espero que estos posts tengan mucha frecuencia, pero sí que sean medianamente interesantes al menos.
 
-Intercalando citas de Woody Allen y de Mark Fisher en su primer blog (["A New Career in a New Town,"](https://k-punk.org/a-new-career-in-a-new-town/)), termino esta primera entrada:
+Intercalando citas de Woody Allen y de Mark Fisher en su primer blog (["A New Career in a New Town"](https://k-punk.org/a-new-career-in-a-new-town/)), termino esta primera entrada:
 
 > I've never been an intellectual, but, well, here it is.
