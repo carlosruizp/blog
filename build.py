@@ -170,6 +170,31 @@ def render_post_block(post, root, full=True):
 """
 
 
+def render_comments(site):
+    g = site.get("giscus") or {}
+    if not (g.get("repo_id") and g.get("category_id")):
+        return ""
+    return f"""
+      <div class="comments">
+        <h3>Comments</h3>
+        <script src="https://giscus.app/client.js"
+                data-repo="{g["repo"]}"
+                data-repo-id="{g["repo_id"]}"
+                data-category="{g["category"]}"
+                data-category-id="{g["category_id"]}"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="dark"
+                data-lang="es"
+                crossorigin="anonymous"
+                async></script>
+      </div>
+"""
+
+
 def build_archive_list_html(posts, root):
     by_year = {}
     for p in posts:
@@ -231,7 +256,7 @@ def main():
 
     # individual post pages
     for p in posts:
-        content = render_post_block(p, root="../../../", full=True)
+        content = render_post_block(p, root="../../../", full=True) + render_comments(site)
         write(OUT_DIR / p["url"], render_base(
             root="../../../", page_title=f'{p["title"]} — {site["title"]}',
             content_html=content, site=site))
