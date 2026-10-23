@@ -225,12 +225,17 @@ def build_rss(posts, site):
       <pubDate>{format_datetime(p["date"])}</pubDate>
       <description>{xml_escape(p["body_html"])}</description>
     </item>""")
+    # newest post date, not "now", so the feed only changes when content does
+    last_build = (f'\n    <lastBuildDate>{format_datetime(posts[0]["date"])}</lastBuildDate>'
+                  if posts else "")
     return f"""<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>{xml_escape(site["title"])}</title>
     <link>{site["base_url"]}/</link>
     <description>{xml_escape(site["tagline"])}</description>
+    <language>{site.get("language", "es")}</language>
+    <atom:link href="{site["base_url"]}/feed.xml" rel="self" type="application/rss+xml"/>{last_build}
 {''.join(items)}
   </channel>
 </rss>
