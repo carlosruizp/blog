@@ -153,7 +153,7 @@ def render_base(*, root, page_title, content_html, site):
 
 def render_post_block(post, root, full=True):
     date_str = post["date"].strftime("%A, %d %B %Y")
-    body = post["body_html"] if full else post["body_html"]
+    body = post["body_html"].replace('src="static/', f'src="{root}static/')
     title_html = (f'<h2><a href="{root}{post["url"]}">{post["title"]}</a></h2>'
                   if not full else f'<h2>{post["title"]}</h2>')
     tags = ""
@@ -223,7 +223,7 @@ def build_rss(posts, site):
       <link>{link}</link>
       <guid>{link}</guid>
       <pubDate>{format_datetime(p["date"])}</pubDate>
-      <description>{xml_escape(p["body_html"])}</description>
+      <description>{xml_escape(p["body_html"].replace('src="static/', f'src="{site["base_url"]}/static/'))}</description>
     </item>""")
     # newest post date, not "now", so the feed only changes when content does
     last_build = (f'\n    <lastBuildDate>{format_datetime(posts[0]["date"])}</lastBuildDate>'
